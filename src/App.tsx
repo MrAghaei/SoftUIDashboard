@@ -1,13 +1,10 @@
 
 import './App.css'
+import SignUpMain from "./pages/sign-in page/SignUpMain.tsx";
 
 function App() {
-
-
   return (
-    <div >
-      <p className='bg-amber-300'>Hello world</p>
-    </div>
+    <SignUpMain/>
   )
 }
 
