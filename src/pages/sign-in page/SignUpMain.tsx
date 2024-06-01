@@ -3,6 +3,9 @@ import {useState} from "react";
 
 function SignUpMain (){
     const [rememberMe, setRememberMe] = useState(false);
+    function onChangeRememberMeHandler(){
+        setRememberMe(!rememberMe)
+    }
     return(
         <div className='flex flex-col w-1/3 p-20 gap-5 text-primary-text'>
             {/* Container for sign-in form */}
@@ -42,7 +45,7 @@ function SignUpMain (){
                         id="remember-me"
                         className="hidden"
                         checked={rememberMe}
-                        onChange={() => setRememberMe(!rememberMe)}
+                        onChange={onChangeRememberMeHandler}
                     />
                     <label htmlFor="remember-me" className="relative flex items-center cursor-pointer">
                         {/* Styled checkbox */}
