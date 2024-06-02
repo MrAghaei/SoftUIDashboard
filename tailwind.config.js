@@ -13,7 +13,8 @@ export default {
           text:"#344767"
         },
         secondary:{
-          outline: "#e9aede"
+          outline: "#e9aede",
+          text:"#68758f"
         }
       }
     },
