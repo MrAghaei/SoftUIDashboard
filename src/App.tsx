@@ -1,10 +1,22 @@
 
 import './App.css'
-import SignUpMain from "./pages/sign-in page/SignUpMain.tsx";
+import SignInMain from "./pages/sign-in page/SignInMain.tsx";
+import {createBrowserRouter, Route, Routes} from "react-router-dom";
+import React from "react";
+
+
+const router = createBrowserRouter([
+  {
+    path: "/signin",
+    element: <SignInMain />
+  }
+])
 
 function App() {
   return (
-    <SignUpMain/>
+    <Routes>
+      <Route path="/signin" element={<SignInMain />} />
+    </Routes>
   )
 }
 

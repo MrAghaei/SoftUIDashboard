@@ -1,9 +1,23 @@
 
 import ToggleComponent from "../../components/ToggleComponent.tsx";
+import {useNavigate} from "react-router-dom";
+import {useState} from "react";
 
 
-function SignUpMain (){
+function SignInMain (){
 
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+    function handleSubmit(e: { preventDefault: () => void; }) {
+        e.preventDefault();
+        if(email && password){
+            navigate('/dashboard')
+        }
+        else{
+            alert('Incorrect email or password')
+        }
+    }
     return(
         <div className='flex flex-row p-4'>
             <div className='flex flex-col w-1/2 p-56 pt-72 gap-5 text-primary-text'>
@@ -12,7 +26,7 @@ function SignUpMain (){
                     <h2 className='text-2xl font-bold'>Sign in</h2> {/* Sign-in header */}
                     <p className='text-secondary-text'>Enter your email and password to sign in</p> {/* Sign-in description */}
                 </div>
-                <form>
+                <form onSubmit={handleSubmit}>
                     {/* Email input field */}
                     <div className="mb-4">
 
@@ -21,6 +35,7 @@ function SignUpMain (){
                             id="email"
                             placeholder='Email'
                             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-secondary-outline sm:text-sm"
+                            onChange={(e)=>setEmail(e.target.value)}
                             required
                         />
                     </div>
@@ -32,6 +47,7 @@ function SignUpMain (){
                             id="password"
                             placeholder='Password'
                             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-secondary-outline sm:text-sm"
+                            onChange={(e)=>setPassword(e.target.value)}
                             required
                         />
                     </div>
@@ -41,6 +57,7 @@ function SignUpMain (){
                     <button
                         type="submit"
                         className="w-full bg-gradient-to-r from-primary-light to-primary-dark text-white py-2 px-4 rounded-md"
+
                     >
                         Sign In
                     </button>
@@ -64,4 +81,4 @@ function SignUpMain (){
 
 }
 
-export default SignUpMain
+export default SignInMain
