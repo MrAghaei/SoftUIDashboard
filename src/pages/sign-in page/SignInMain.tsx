@@ -1,5 +1,5 @@
 
-import ToggleComponent from "../../components/ToggleComponent.tsx";
+import ToggleComponent from "../../components/Toggle.tsx";
 import {useNavigate} from "react-router-dom";
 import {useState} from "react";
 
