@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-function toggleComponent(){
+function toggle(){
     const [rememberMe, setRememberMe] = useState(false);
     function onChangeRememberMeHandler(){
         setRememberMe(!rememberMe)
@@ -28,4 +28,4 @@ function toggleComponent(){
     )
 }
 
-export default toggleComponent
+export default toggle
