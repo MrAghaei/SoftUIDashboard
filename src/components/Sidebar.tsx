@@ -8,26 +8,41 @@ const Sidebar = () => {
     const [isApplicationsOpen, setIsApplicationsOpen] = useState(false);
     const [isEcommerceOpen, setIsEcommerceOpen] = useState(false);
     const [isAuthOpen, setIsAuthOpen] = useState(false);
+    const [isDashboardsOpen, setIsDashbaordsOpen] = useState(false);
+
 
     return (
-        <div className="fixed w-64 h-full bg-white shadow-md">
+        <div className="fixed p-8 w-72 h-full bg-white shadow-md text-secondary-text">
             <div className="p-4 flex items-center space-x-3">
                 <FaHome size={24} />
-                <span className="text-xl font-semibold">Soft UI Dashboard PRO</span>
+                <p className="text-xl font-semibold">Soft UI Dashboard</p>
             </div>
             <nav className="mt-4">
                 <ul>
-                    <li className="p-4 hover:bg-gray-100 flex items-center space-x-2">
-                        <FaHome />
-                        <span>Dashboards</span>
-                    </li>
-
-                    <li className="p-4 hover:bg-gray-100 cursor-pointer flex items-center justify-between" onClick={() => setIsPagesOpen(!isPagesOpen)}>
+                    <li className="p-4 hover:bg-gray-100 cursor-pointer flex items-center justify-between"
+                        onClick={() => setIsDashbaordsOpen(!isDashboardsOpen)}>
                         <div className="flex items-center space-x-2">
-                            <FaUser />
+                            <FaUser/>
+                            <span>Dashboards</span>
+                        </div>
+                        {isPagesOpen ? <FiChevronUp/> : <FiChevronDown/>}
+                    </li>
+                    {isDashboardsOpen && <ul className="pl-8">
+                        <li className="p-2 hover:bg-gray-100">Default</li>
+                        <li className="p-2 hover:bg-gray-100">Automotive </li>
+                        <li className="p-2 hover:bg-gray-100">Smart Home</li>
+                        <li className="p-2 hover:bg-gray-100">Virtual Reality</li>
+                        <li className="p-2 hover:bg-gray-100">CRM</li>
+                    </ul>}
+                    <p className='font-bold pb-1 pt-5'>PAGES</p>
+
+                    <li className="p-4 cursor-pointer flex items-center justify-between bg-white shadow-2xl rounded-2xl"
+                        onClick={() => setIsPagesOpen(!isPagesOpen)}>
+                        <div className="flex items-center space-x-2">
+                            <FaUser/>
                             <span>Pages</span>
                         </div>
-                        {isPagesOpen ? <FiChevronUp /> : <FiChevronDown />}
+                        {isPagesOpen ? <FiChevronUp/> : <FiChevronDown/>}
                     </li>
                     {isPagesOpen && (
                         <ul className="pl-8">
@@ -45,9 +60,11 @@ const Sidebar = () => {
                         </ul>
                     )}
 
-                    <li className="p-4 hover:bg-gray-100 cursor-pointer flex items-center justify-between" onClick={() => setIsApplicationsOpen(!isApplicationsOpen)}>
+                    <li className="p-4 cursor-pointer flex items-center justify-between" onClick={() => setIsApplicationsOpen(!isApplicationsOpen)}>
                         <div className="flex items-center space-x-2">
-                            <FaUser />
+                            <div className='bg-white rounded p-2 shadow-2xl'>
+                                <FaUser />
+                            </div>
                             <span>Applications</span>
                         </div>
                         {isApplicationsOpen ? <FiChevronUp /> : <FiChevronDown />}
