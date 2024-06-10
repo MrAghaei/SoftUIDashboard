@@ -3,7 +3,7 @@ import './App.css'
 import SignInMain from "./pages/sign-in page/SignInMain.tsx";
 import {createBrowserRouter, Route, Routes} from "react-router-dom";
 import React from "react";
-import Sidebar from "./components/Sidebar.tsx";
+import ProjectsMain from "./pages/Projects/ProjectsMain.tsx";
 
 
 const router = createBrowserRouter([
@@ -16,9 +16,9 @@ const router = createBrowserRouter([
 function App() {
   return (
       <>
-        <Sidebar/>
         <Routes>
           <Route path="/signin" element={<SignInMain />} />
+            <Route path='/profile/projects' element={<ProjectsMain/>}/>
         </Routes>
       </>
 
