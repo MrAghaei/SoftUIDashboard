@@ -1,10 +1,24 @@
 import { FaBoxOpen } from "react-icons/fa6";
 import { BiSolidMessageSquareDetail } from "react-icons/bi";
 import { IoIosSettings } from "react-icons/io";
+import {useState} from "react";
 
 
 
 function Profilebar(){
+    const [profileBarToggle, setProfileBarToggle] = useState('1')
+    function whichProfileBarIconsIsActive(): string{
+        switch (profileBarToggle) {
+            case '1':
+                return "translate-x-0";
+            case '2':
+                return "translate-x-[130px]";
+            case '3':
+                return "translate-x-[280px]";
+            default:
+                return "1";
+        }
+    }
     return(
         <div className='w-full p-4 pr-40 pl-96 flex flex-col size relative items-center text-primary-text'>
             <div className='h-80 w-full rounded-3xl bg-gradient-to-r from-primary-light to-primary-dark'></div>
@@ -18,18 +32,21 @@ function Profilebar(){
                         <p className='font-bold'>CEO / Co-founder</p>
                     </div>
                 </div>
-                <div className='flex gap-10'>
-                    <div className='flex cursor-pointer gap-2 items-center text-xl'>
+                <div className='flex gap-10 relative pt-20 pb-20 '>
+                    <div className='flex cursor-pointer gap-2 items-center text-xl' onClick={()=>setProfileBarToggle('1')}>
                         <FaBoxOpen/>
                         <p>App</p>
                     </div>
-                    <div className='flex cursor-pointer gap-2 items-center text-xl'>
+                    <div className='flex cursor-pointer gap-2 items-center text-xl' onClick={()=>setProfileBarToggle('2')}>
                         <BiSolidMessageSquareDetail />
                         <p>Messages</p>
                     </div>
-                    <div className='flex cursor-pointer gap-2 items-center text-xl'>
+                    <div className='flex cursor-pointer gap-2 items-center text-xl' onClick={()=>setProfileBarToggle('3')}>
                         <IoIosSettings />
                         <p>Settings</p>
+                    </div>
+                    <div>
+                        <span className={`absolute bg-white w-32 h-10 -left-8 top-[77px] rounded-2xl shadow-2xl -z-10 transition-transform ${whichProfileBarIconsIsActive()}`}></span>
                     </div>
                 </div>
             </div>
