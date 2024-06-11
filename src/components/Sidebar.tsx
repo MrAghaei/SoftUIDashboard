@@ -8,10 +8,9 @@ const Sidebar = () => {
     const [isApplicationsOpen, setIsApplicationsOpen] = useState(false);
     const [isEcommerceOpen, setIsEcommerceOpen] = useState(false);
     const [isAuthOpen, setIsAuthOpen] = useState(false);
-    const [isDashboardsOpen, setIsDashboardsOpen] = useState(false);
 
     return (
-        <div className="fixed bg-gray-100 p-8 w-72 h-full shadow-md text-secondary-text">
+        <div className="fixed bg-gray-100 p-8 w-72 h-full shadow-md text-secondary-text overflow-y-scroll">
             <div className="p-4 flex items-center space-x-3">
                 <FaHome size={24} />
                 <p className="text-xl font-semibold">Soft UI Dashboard</p>
