@@ -8,7 +8,6 @@ const Sidebar = () => {
     const [isApplicationsOpen, setIsApplicationsOpen] = useState(false);
     const [isEcommerceOpen, setIsEcommerceOpen] = useState(false);
     const [isAuthOpen, setIsAuthOpen] = useState(false);
-    const [isDashboardsOpen, setIsDashboardsOpen] = useState(false);
 
     return (
         <div className="fixed bg-gray-100 p-8 w-72 h-full shadow-md text-secondary-text overflow-y-scroll">
