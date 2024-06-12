@@ -20,7 +20,7 @@ function Profilebar(){
         }
     }
     return(
-        <div className='w-full p-4 pr-40 pl-96 flex flex-col size relative items-center text-primary-text'>
+        <div className='w-full p-4 pr-40 pl-96 flex flex-col size relative items-center text-primary-text -z-10'>
             <div className='h-80 w-full rounded-3xl bg-gradient-to-r from-primary-light to-primary-dark'></div>
             <div className='w-11/12 h-32 bg-white bg-opacity-70 backdrop-blur-lg rounded-3xl shadow-2xl -translate-y-16 p-5 flex items-center justify-between'>
                 <div className='flex gap-5 items-center'>
