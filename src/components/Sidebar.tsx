@@ -5,8 +5,13 @@ import SidebarSection from './SidebarSection';
 import SidebarItem from './SidebarItem';
 
 const Sidebar = () => {
+    const DashboardItems: string[] = ['Default','Automotive', 'Smart Home', 'Virtual Reality', 'CRM'];
+    const PagesItems: string[] = ['Profile','Users', 'Account', 'Projects', 'Pricing Page', 'Messages', 'RTL', 'Widgets', 'Charts', 'Sweet Alerts', 'Notifications'];
+    const ApplicationItems: string[] = ['Kanban','Wizard', 'DataTables', 'Calendar', 'Analytics'];
+    const EcommerceItems: string[] = ['Overview','Products', 'Orders', 'Referral'];
+    const AuthenticationItems: string[] = ['Sign In','Sign Up', 'Reset Password', 'Lock', '2-step Verification', 'Error'];
     return (
-        <div className="fixed bg-gray-100 p-8 w-72 h-full shadow-md text-secondary-text overflow-y-scroll">
+        <div className="fixed bg-gray-100 p-8 w-72 h-full shadow-md text-secondary-text overflow-y-scroll z-30">
             <div className="p-4 flex items-center space-x-3">
                 <FaHome size={24} />
                 <p className="text-xl font-semibold">Soft UI Dashboard</p>
@@ -14,51 +19,25 @@ const Sidebar = () => {
             <nav className="mt-4">
                 <ul>
                     <SidebarSection icon={FaUser} title="Dashboards">
-                        <SidebarItem title="Default" />
-                        <SidebarItem title="Automotive" />
-                        <SidebarItem title="Smart Home" />
-                        <SidebarItem title="Virtual Reality" />
-                        <SidebarItem title="CRM" />
+                        <SidebarItem items={DashboardItems} />
                     </SidebarSection>
 
                     <p className='font-bold pb-1 pt-5'>PAGES</p>
 
                     <SidebarSection icon={FaUser} title="Pages">
-                        <SidebarItem title="Profile" />
-                        <SidebarItem title="Users" />
-                        <SidebarItem title="Account" />
-                        <SidebarItem title="Projects" />
-                        <SidebarItem title="Pricing Page" />
-                        <SidebarItem title="Messages" />
-                        <SidebarItem title="RTL" />
-                        <SidebarItem title="Widgets" />
-                        <SidebarItem title="Charts" />
-                        <SidebarItem title="Sweet Alerts" />
-                        <SidebarItem title="Notifications" />
+                        <SidebarItem items={PagesItems} />
                     </SidebarSection>
 
                     <SidebarSection icon={FaUser} title="Applications">
-                        <SidebarItem title="Kanban" />
-                        <SidebarItem title="Wizard" />
-                        <SidebarItem title="DataTables" />
-                        <SidebarItem title="Calendar" />
-                        <SidebarItem title="Analytics" />
+                        <SidebarItem items={ApplicationItems} />
                     </SidebarSection>
 
                     <SidebarSection icon={FaShoppingCart} title="Ecommerce">
-                        <SidebarItem title="Overview" />
-                        <SidebarItem title="Products" />
-                        <SidebarItem title="Orders" />
-                        <SidebarItem title="Referral" />
+                        <SidebarItem items={EcommerceItems} />
                     </SidebarSection>
 
                     <SidebarSection icon={FaSignInAlt} title="Authentication">
-                        <SidebarItem title="Sign In" />
-                        <SidebarItem title="Sign Up" />
-                        <SidebarItem title="Reset Password" />
-                        <SidebarItem title="Lock" />
-                        <SidebarItem title="2-step Verification" />
-                        <SidebarItem title="Error" />
+                        <SidebarItem items={AuthenticationItems} />
                     </SidebarSection>
                 </ul>
             </nav>
