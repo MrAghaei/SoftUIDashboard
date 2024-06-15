@@ -7,14 +7,10 @@ function ProjectCard(){
                 <div className='flex gap-2 flex-col'>
                     <p className='text-2xl text-primary-text'>Slack Bot</p>
                     <div className="flex">
-                        <img src="/src/assets/profile-image.jpg"
-                             className="size-5 rounded-full border-2 border-white -ml-2 first:ml-0"/>
-                        <img src="/src/assets/profile-image.jpg"
-                             className="size-5 rounded-full border-2 border-white -ml-2"/>
-                        <img src="/src/assets/profile-image.jpg"
-                             className="size-5 rounded-full border-2 border-white -ml-2"/>
-                        <img src="/src/assets/profile-image.jpg"
-                             className="size-5 rounded-full border-2 border-white -ml-2"/>
+                        <img src="/src/assets/profile-image.jpg" className="size-5 rounded-full border-2 border-white -ml-2 first:ml-0"/>
+                        <img src="/src/assets/profile-image.jpg" className="size-5 rounded-full border-2 border-white -ml-2"/>
+                        <img src="/src/assets/profile-image.jpg" className="size-5 rounded-full border-2 border-white -ml-2"/>
+                        <img src="/src/assets/profile-image.jpg" className="size-5 rounded-full border-2 border-white -ml-2"/>
                     </div>
 
                 </div>
