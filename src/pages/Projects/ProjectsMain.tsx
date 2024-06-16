@@ -1,6 +1,7 @@
 import Sidebar from "../../components/Sidebar.tsx";
 import Profilebar from "../../components/Profilebar.tsx";
 import ProjectCard from "./ProjectCard.tsx";
+import { FaPlus } from "react-icons/fa6";
 
 function ProjectsMain(){
     return(
@@ -17,12 +18,19 @@ function ProjectsMain(){
                 <ProjectCard/>
                 <ProjectCard/>
                 <ProjectCard/>
-                <ProjectCard/>
+                <div
+                    className='bg-white shadow-2xl rounded-2xl w-[450px] h-60 text-secondary-text p-10 flex items-center justify-center cursor-pointer'>
+                    <div className='flex flex-col items-center'>
+                        <FaPlus className='size-6'/>
+                        <p className='text-2xl'>New Project</p>
+                    </div>
+                </div>
+
             </div>
         </div>
 
 
-
     )
 }
+
 export default ProjectsMain
