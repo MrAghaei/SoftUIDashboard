@@ -18,7 +18,7 @@ function App() {
       <>
         <Routes>
           <Route path="/signin" element={<SignInMain />} />
-            <Route path='/profile/projects' element={<ProjectsMain/>}/>
+            <Route path='/profile/' element={<ProjectsMain/>}/>
         </Routes>
       </>
 

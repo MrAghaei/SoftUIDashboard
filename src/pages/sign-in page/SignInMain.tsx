@@ -12,7 +12,7 @@ function SignInMain (){
     function handleSubmit(e: { preventDefault: () => void; }) {
         e.preventDefault();
         if(email && password){
-            navigate('/profile/projects')
+            navigate('/profile/')
         }
         else{
             alert('Incorrect email or password')

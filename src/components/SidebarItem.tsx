@@ -1,13 +1,19 @@
 // src/components/SidebarItem.jsx (or .tsx)
-import React from 'react';
+import React, {useState} from 'react';
 
-const SidebarItem = ({items} ) => (
+
+const SidebarItem = ({items} ) => {
+    const [isOpen, setIsOpen] = useState(false);
+
     items.map(item=> (
-        <li className="p-2 hover:bg-gray-100 transition-colors duration-300 ease-in-out">
+        <ul key={item} className="block cursor-pointer p-2 transition-colors duration-300 ease-in-out">
             {item}
-        </li>
+            <li className={`pl-8 overflow-hidden transition-max-height duration-300 ease-in-out ${isOpen ? 'max-h-screen' : 'max-h-0'}`}>
+                {item.children}
+            </li>
+        </ul>
     ))
 
-);
 
+}
 export default SidebarItem;
