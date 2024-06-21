@@ -2,6 +2,7 @@ import React from 'react';
 import { FaHome, FaUser, FaShoppingCart, FaSignInAlt } from 'react-icons/fa';
 import SidebarSection from './SidebarSection';
 import SidebarItem from './SidebarItem';
+import SideBarSubItem from "./SideBarSubItem.tsx";
 
 const Sidebar = () => {
     const DashboardItems: string[] = ['Default','Automotive', 'Smart Home', 'Virtual Reality', 'CRM'];
@@ -10,6 +11,9 @@ const Sidebar = () => {
     const EcommerceItems: string[] = ['Overview','Products', 'Orders', 'Referral'];
     const AuthenticationItems: string[] = ['Sign In','Sign Up', 'Reset Password', 'Lock', '2-step Verification', 'Error'];
     const PagesClassNames = "bg-white shadow-2xl rounded-2xl"
+
+    //subitems
+    const ProfileSubItems: string[] = ['Profile Overview','Teams', 'All Projects'];
 
     return (
         <div className="fixed bg-gray-100 p-8 w-72 h-full shadow-md text-secondary-text overflow-y-scroll z-30">
@@ -25,7 +29,7 @@ const Sidebar = () => {
                             title: 'Dashboards',
                             isInitiallyOpen: false,
                             className: '',
-                            children: <SidebarItem items={DashboardItems} />
+                            children: <SidebarItem data={{items: DashboardItems, children: <SideBarSubItem data={{items: ProfileSubItems}}/>}} />
                         }}
                     />
 
@@ -37,7 +41,7 @@ const Sidebar = () => {
                             title: 'Pages',
                             isInitiallyOpen: false,
                             className: PagesClassNames,
-                            children: <SidebarItem items={PagesItems} />
+                            children: <SidebarItem data={{items: PagesItems, children: <SideBarSubItem data={{items: ProfileSubItems}}/>}} />
                         }}
                     />
 
@@ -47,7 +51,7 @@ const Sidebar = () => {
                             title: 'Applications',
                             isInitiallyOpen: false,
                             className: '',
-                            children: <SidebarItem items={ApplicationItems} />
+                            children: <SidebarItem data={{items: ApplicationItems, children: <SideBarSubItem data={{items: ProfileSubItems}}/>}} />
                         }}
                     />
 
@@ -57,7 +61,7 @@ const Sidebar = () => {
                             title: 'Ecommerce',
                             isInitiallyOpen: false,
                             className: '',
-                            children: <SidebarItem items={EcommerceItems} />
+                            children: <SidebarItem data={{items: EcommerceItems, children: <SideBarSubItem data={{items: ProfileSubItems}}/>}} />
                         }}
                     />
 
@@ -67,7 +71,7 @@ const Sidebar = () => {
                             title: 'Authentication',
                             isInitiallyOpen: false,
                             className: '',
-                            children: <SidebarItem items={AuthenticationItems} />
+                            children: <SidebarItem data={{items: AuthenticationItems, children: <SideBarSubItem data={{items: ProfileSubItems}}/>}} />
                         }}
                     />
                 </ul>
