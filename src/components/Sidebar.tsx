@@ -14,6 +14,7 @@ const Sidebar = () => {
 
     //subitems
     const ProfileSubItems: string[] = ['Profile Overview','Teams', 'All Projects'];
+    const UsersSubItems: string[] = ['Reports','New User'];
 
     return (
         <div className="fixed bg-gray-100 p-8 w-72 h-full shadow-md text-secondary-text overflow-y-scroll z-30">
@@ -29,7 +30,7 @@ const Sidebar = () => {
                             title: 'Dashboards',
                             isInitiallyOpen: false,
                             className: '',
-                            children: <SidebarItem data={{items: DashboardItems, children: <SideBarSubItem data={{items: ProfileSubItems}}/>}} />
+                            children: <SidebarItem data={{items: DashboardItems, children: null}} />
                         }}
                     />
 
@@ -51,7 +52,7 @@ const Sidebar = () => {
                             title: 'Applications',
                             isInitiallyOpen: false,
                             className: '',
-                            children: <SidebarItem data={{items: ApplicationItems, children: <SideBarSubItem data={{items: ProfileSubItems}}/>}} />
+                            children: <SidebarItem data={{items: ApplicationItems, children: <SideBarSubItem data={{items: UsersSubItems}}/>}} />
                         }}
                     />
 
